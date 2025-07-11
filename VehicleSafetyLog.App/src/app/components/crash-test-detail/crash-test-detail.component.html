@@ -1,0 +1,39 @@
+<div class="detail-container">
+    @if (isLoading) {
+    <p>Loading...</p>
+    }
+
+    @if (errorMessage) {
+    <p class="error">{{ errorMessage }}</p>
+    }
+
+    @if (crashTest) {
+    <!-- The routerLink navigates the user back to the main list -->
+    <a routerLink="/tests" class="back-link">← Back to List</a>
+
+    <h2>Crash Test Details: {{ crashTest.vehicle.year }} {{ crashTest.vehicle.make }} {{ crashTest.vehicle.model }}</h2>
+
+    <div class="detail-grid">
+        <div><strong>Test ID:</strong></div>
+        <div>{{ crashTest.id }}</div>
+
+        <div><strong>Test Date:</strong></div>
+        <div>{{ crashTest.testDate | date:'fullDate' }}</div>
+
+        <div><strong>Test Type:</strong></div>
+        <div>{{ crashTest.testType }}</div>
+
+        <div><strong>Overall Result:</strong></div>
+        <div [class]="crashTest.overallResult">{{ crashTest.overallResult }}</div>
+
+        <div><strong>Head Injury Criterion (HIC):</strong></div>
+        <div>{{ crashTest.headInjuryCriterion }}</div>
+
+        <div><strong>Peak Deceleration:</strong></div>
+        <div>{{ crashTest.peakDecelerationG }} G</div>
+
+        <div><strong>Notes:</strong></div>
+        <div>{{ crashTest.notes || 'N/A' }}</div>
+    </div>
+    }
+</div>

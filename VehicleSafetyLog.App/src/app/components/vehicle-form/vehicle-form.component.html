@@ -1,0 +1,33 @@
+<div class="form-container">
+    <h2>Add New Vehicle</h2>
+
+    <form [formGroup]="vehicleForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-field">
+            <label for="make">Make:</label>
+            <input id="make" type="text" formControlName="make">
+            <div *ngIf="vehicleForm.get('make')?.invalid && vehicleForm.get('make')?.touched" class="error">
+                Make is required.
+            </div>
+        </div>
+
+        <div class="form-field">
+            <label for="model">Model:</label>
+            <input id="model" type="text" formControlName="model">
+            <div *ngIf="vehicleForm.get('model')?.invalid && vehicleForm.get('model')?.touched" class="error">
+                Model is required.
+            </div>
+        </div>
+
+        <div class="form-field">
+            <label for="year">Year:</label>
+            <input id="year" type="number" formControlName="year">
+            <div *ngIf="vehicleForm.get('year')?.invalid && vehicleForm.get('year')?.touched" class="error">
+                Year is required.
+            </div>
+        </div>
+
+        <!-- The button is disabled if the form is not valid -->
+        <button type="submit" [disabled]="!vehicleForm.valid">Save Vehicle</button>
+    </form>
+</div>

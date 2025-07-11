@@ -1,0 +1,48 @@
+<div class="form-container">
+  <h2>Add New Crash Test</h2>
+
+  <form [formGroup]="crashTestForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-field">
+      <label for="vehicleId">Vehicle:</label>
+      <select id="vehicleId" formControlName="vehicleId">
+        <option value="" disabled>-- Select a Vehicle --</option>
+        @for (vehicle of vehicles; track vehicle.id) {
+        <option [value]="vehicle.id">
+          {{ vehicle.year }} {{ vehicle.make }} {{ vehicle.model }}
+        </option>
+        }
+      </select>
+      <div *ngIf="crashTestForm.get('vehicleId')?.invalid && crashTestForm.get('vehicleId')?.touched" class="error">
+        Please select a vehicle.
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="testType">Test Type:</label>
+      <select id="testType" formControlName="testType">
+        <option value="Frontal">Frontal</option>
+        <option value="Side">Side</option>
+        <option value="Rollover">Rollover</option>
+        <option value="Rear">Rear</option>
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="headInjuryCriterion">Head Injury Criterion (HIC):</label>
+      <input type="number" id="headInjuryCriterion" formControlName="headInjuryCriterion">
+    </div>
+
+    <div class="form-field">
+      <label for="peakDecelerationG">Peak Deceleration (G):</label>
+      <input type="number" id="peakDecelerationG" formControlName="peakDecelerationG">
+    </div>
+
+    <div class="form-field">
+      <label for="notes">Notes:</label>
+      <textarea id="notes" formControlName="notes" rows="3"></textarea>
+    </div>
+
+    <button type="submit" [disabled]="!crashTestForm.valid">Save Crash Test</button>
+  </form>
+</div>

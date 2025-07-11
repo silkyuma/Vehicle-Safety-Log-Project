@@ -1,0 +1,10 @@
+C:\Users\umasi\VehicleSafetyLog.App\bin\Debug\VehicleSafetyLog.App.dll
+C:\Users\umasi\VehicleSafetyLog.App\bin\Debug\VehicleSafetyLog.App.pdb
+C:\Users\umasi\VehicleSafetyLog.App\bin\Debug\Microsoft.Analytics.Interfaces.dll
+C:\Users\umasi\VehicleSafetyLog.App\bin\Debug\Microsoft.Analytics.Interfaces.Streaming.dll
+C:\Users\umasi\VehicleSafetyLog.App\bin\Debug\Microsoft.Analytics.Types.dll
+C:\Users\umasi\VehicleSafetyLog.App\obj\Debug\VehicleSafetyLog.App.csproj.AssemblyReference.cache
+C:\Users\umasi\VehicleSafetyLog.App\obj\Debug\VehicleSafetyLog.App.csproj.CoreCompileInputs.cache
+C:\Users\umasi\VehicleSafetyLog.App\obj\Debug\VehicleS.A69BF44E.Up2Date
+C:\Users\umasi\VehicleSafetyLog.App\obj\Debug\VehicleSafetyLog.App.dll
+C:\Users\umasi\VehicleSafetyLog.App\obj\Debug\VehicleSafetyLog.App.pdb

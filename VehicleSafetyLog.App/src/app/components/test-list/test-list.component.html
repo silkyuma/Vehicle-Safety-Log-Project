@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>Crash Test Log</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Vehicle</th>
+        <th>Test Type</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (test of tests; track test.id) {
+      <!-- Add the [routerLink] directive here. It will navigate to '/tests/1', '/tests/2', etc. -->
+      <tr [routerLink]="['/tests', test.id]" class="clickable-row" [ngClass]="getResultClass(test.overallResult)">
+        <td>{{ test.testDate | date:'short' }}</td>
+        <td>{{ test.vehicle.year }} {{ test.vehicle.make }} {{ test.vehicle.model }}</td>
+        <td>{{ test.testType }}</td>
+        <td>{{ test.overallResult }}</td>
+      </tr>
+      } @empty {
+      <tr>
+        <td colspan="4">No crash tests found.</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
